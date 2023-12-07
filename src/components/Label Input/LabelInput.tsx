@@ -1,0 +1,38 @@
+import { labelInputProps } from "../../constants/Types";
+
+function LabelInput({
+  isLabel,
+  label,
+  inputType,
+  placeholder,
+  isError,
+  error,
+  isRequired,
+  classes,
+}: labelInputProps) {
+  return (
+    <div className="w-full md:w-1/3">
+      {isLabel && (
+        <label
+          className="text-m font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          htmlFor="name"
+        >
+          {label}
+        </label>
+      )}
+      <input
+        className={`flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 ${classes}`}
+        type={inputType}
+        placeholder={placeholder}
+      ></input>
+      {isRequired ? (
+        <p className="mt-1 text-sm text-gray-500">*This field is required</p>
+      ) : isError ? (
+        <p className="mt-1 text-sm text-red-500">*{error}</p>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+}
+export default LabelInput;

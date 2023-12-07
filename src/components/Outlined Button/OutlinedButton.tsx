@@ -5,9 +5,10 @@ const OutlinedButton = ({
   buttonStyle,
   title,
   type,
+  classes
 }: buttonProps) => {
   let style: any =
-    "rounded-sm px-3 py-2 text-sm font-semibold shadow-sm ";
+    "px-3 py-2 text-sm font-semibold shadow-sm ";
   if (buttonStyle === "danger") {
     style += "text-red-600 border border-red-700 focus-visible:outline-red";
   } else if (buttonStyle === "success") {
@@ -15,10 +16,10 @@ const OutlinedButton = ({
   } else if (buttonStyle === "warning") {
     style += " text-yellow-600 border border-yellow-700 focus-visible:outline-yellow";
   } else {
-    style += " text-blue-600 border border-blue-700 focus-visible:outline-blue";
+    style += " text-black hover:bg-gray-200 border border-black focus-visible:outline-black";
   }
   return (
-    <button type={type} className={style}>
+    <button type={type} className={`${style} ${classes}`}>
       {title}
     </button>
   );
