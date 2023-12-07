@@ -15,3 +15,10 @@ export type labelInputProps = {
   isRequired?: boolean;
   classes?: string;
 };
+
+
+export type courseDescProps = {
+    title: string;
+    desc: string;
+    buttonText: string
+};

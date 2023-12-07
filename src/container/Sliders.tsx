@@ -2,7 +2,7 @@ import HomeSliderImage from "../assets/images/home-slider-image.jpg";
 
 const Sliders = () => {
   return (
-    <div className="relative">
+    <div className="relative mb-12">
       <div className="absolute px-8 py-6 w-[450px] flex flex-col bg-white left-[350px] top-[70px]">
         <h1 className="text-4xl font-bold">Always a new skill to learn</h1>
         <p className="mt-2 text-md">
